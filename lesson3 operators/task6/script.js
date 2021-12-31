@@ -22,3 +22,4 @@ console.log(isTruthy);
 console.log(isFalsy);
 console.log(isNotTrue);
 console.log(isTrue);
+
