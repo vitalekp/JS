@@ -1,0 +1,5 @@
+no-return-assign
+no-plusplus
+no-undef
+eqeqeq
+no-var
