@@ -30,3 +30,5 @@ function sortDesc(array) {
   }
   return array;
 }
+
+sortAsc([1, 2, 3, 4, 1, 5, 30, 29, 30, 3, 5]);
