@@ -6,12 +6,19 @@ module.exports = {
     browser: true,
   },
   rules: {
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
+    strict: 0,
     'no-alert': 0,
     'no-console': 0,
     'no-constant-condition': 0,
     'no-shadow': 0,
     'no-restricted-globals': 0,
-    'no-unused-vars': 0,
+    // 'no-unused-vars': 0,
     'no-underscore-dangle': 0,
     'func-names': 0,
     'global-require': 0,
