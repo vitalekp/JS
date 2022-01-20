@@ -6,7 +6,6 @@ it('should check if the object is empty', () => {
   expect(result).toEqual({});
 });
 
-
 it('should get a sorted array', () => {
   let result = getAdults({'John Doe': 19, Tom: 17, Bob: 18 });
 

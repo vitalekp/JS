@@ -4,7 +4,6 @@
  * лучше использовать методы класса Object - keys(), values(), entries(). Но мы с ними пока не познакомитись.
  * Чтобы eslint не ругался на эту ошибку, для этой задачи он отключен аннотацией eslint-disable
  * */
-
 export const getAdults = obj => {
   const objAdults = {};
   const MIN_AGE = 17;

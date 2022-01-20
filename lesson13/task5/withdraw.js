@@ -13,7 +13,6 @@ const indexClient = clients.indexOf(client);
 
 console.log(withdraw(['Ann', 'John', 'User'], [1400, 87, -6], 'John', 50));
 
-
 //example 1:
 
 //input
