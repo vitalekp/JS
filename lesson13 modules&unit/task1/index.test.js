@@ -1,18 +1,15 @@
-// simple assertions
-
-it('My first test', () => {
+it('17 и в Африке 17', () => {
   expect(17).toEqual(17);
 });
-
-
-it('My second test', () => {
-  expect(18).toEqual(17);
+it('18 это вам не  17', () => {
+  expect(18).not.toEqual(17);
 });
 
-const getEvenNumbers = num => num.filter(el => el % 2 === 0);
-it('should get even numbers only', () => {
-  const test = getEvenNumbers([1, 2, 3, 4, 5]);
-  expect(test).toEqual([2, 4]);
+const getEvenNumbers = numbers =>
+  numbers.filter(num => (num % 2 == 0));
+
+it('should get only even numbers from array', () => {
+  const result = getEvenNumbers([1, 2, 3, 4]);
+
+  expect(result).toEqual([2, 4]);
 });
-
-
