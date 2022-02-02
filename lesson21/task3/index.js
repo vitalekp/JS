@@ -11,7 +11,7 @@ export const getItemsArray = () => {
   Array.from(toolLists).map(el => arr.push(el));
   console.dir(arr);
 
-  return toolLists;
+  return arr;
 };
 
 getItemsList();
