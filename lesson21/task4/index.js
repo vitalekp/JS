@@ -10,9 +10,9 @@ const getPlans = () => document.querySelector('.plans').innerHTML;
 const getGoal = () => document.querySelector('.goal').outerHTML;
 
 
-// export { getTitle, getDescription, getPlans, getGoal };
+export { getTitle, getDescription, getPlans, getGoal };
 
-console.log(getTitle());
-console.log(getDescription());
-console.log(getPlans());
-console.log(getGoal());
+// console.log(getTitle());
+// console.log(getDescription());
+// console.log(getPlans());
+// console.log(getGoal());
