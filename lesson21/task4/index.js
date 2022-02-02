@@ -1,17 +1,17 @@
 const getTitle = () => {
-  return titleElem = document.querySelector('.title').textContent;
+  return document.querySelector('.title').textContent;
 };
 
 const getDescription = () => {
-  return aboutElem = document.querySelector('.about').innerText;
+  return document.querySelector('.about').innerText;
 };
 
 const getPlans = () => {
-  return plansElem = document.querySelector('.plans').innerHTML;
+  return document.querySelector('.plans').innerHTML;
 };
 
 const getGoal = () => {
-  return goalElem = document.querySelector('.goal').outerHTML;
+  return document.querySelector('.goal').outerHTML;
 };
 
 export { getTitle, getDescription, getPlans, getGoal };
