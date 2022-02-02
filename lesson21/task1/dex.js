@@ -15,7 +15,9 @@ const tasks = [
 const renderTasks = tasksList => {
   const taskElem = document.querySelector('.list');
 
-  const taskItemsElems = tasksList.map(({text, done}) => {
+  const taskItemsElems = tasksList
+    .sort((a, b) => a.done - b.done)
+    .map(({text, done}) => {
     const taskItemElem = document.createElement('li');
     taskItemElem.classList.add('list__item');
     const checkboxElem = document.createElement('input');
