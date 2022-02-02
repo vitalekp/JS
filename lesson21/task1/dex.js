@@ -1,6 +1,6 @@
 'use strict';
 
-const tasks = [
+export const tasks = [
   { text: 'Buy milk', done: false },
   { text: 'Pick up Tom from airport', done: false },
   { text: 'Visit party', done: false },
@@ -20,12 +20,15 @@ const renderTasks = tasksList => {
     .map(({text, done}) => {
     const taskItemElem = document.createElement('li');
     taskItemElem.classList.add('list__item');
+
     const checkboxElem = document.createElement('input');
     checkboxElem.setAttribute('type', 'checkbox');
     checkboxElem.checked = done;
+
     if (done) {
       taskItemElem.classList.add('list__item_done');
     }
+
     checkboxElem.classList.add('list__item-checkbox');
     taskItemElem.append(checkboxElem, text);
 
