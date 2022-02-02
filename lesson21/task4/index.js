@@ -1,30 +1,22 @@
 const getTitle = () => {
-  const titleElem = document.querySelector('.title');
-
-  return titleElem.textContent;
+  return titleElem = document.querySelector('.title').textContent;
 };
 
 const getDescription = () => {
-  const aboutElem = document.querySelector('.about');
-
-  return aboutElem.innerText;
+  return aboutElem = document.querySelector('.about').innerText;
 };
 
 const getPlans = () => {
-  const plansElem = document.querySelector('.plans');
-
-  return plansElem.innerHTML;
+  return plansElem = document.querySelector('.plans').innerHTML;
 };
 
 const getGoal = () => {
-  const goalElem = document.querySelector('.goal');
-
-  return goalElem.outerHTML;
+  return goalElem = document.querySelector('.goal').outerHTML;
 };
 
 export { getTitle, getDescription, getPlans, getGoal };
 
-console.log(getTitle());
-console.log(getDescription());
-console.log(getPlans());
-console.log(getGoal());
+// console.log(getTitle());
+// console.log(getDescription());
+// console.log(getPlans());
+// console.log(getGoal());
