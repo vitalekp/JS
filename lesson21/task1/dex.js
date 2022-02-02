@@ -1,6 +1,6 @@
 'use strict';
 
-export const tasks = [
+const tasks = [
   { text: 'Buy milk', done: true },
   { text: 'Pick up Tom from airport', done: false },
   { text: 'Visit party', done: false },
@@ -17,26 +17,25 @@ const renderTasks = tasksList => {
 
   const taskItemsElems = tasksList
     .sort((a, b) => a.done - b.done)
-    .map(({text, done}) => {
-    const taskItemElem = document.createElement('li');
-    taskItemElem.classList.add('list__item');
+    .map(({ text, done }) => {
+      const taskItemElem = document.createElement('li');
+      taskItemElem.classList.add('list__item');
 
-    const checkboxElem = document.createElement('input');
-    checkboxElem.setAttribute('type', 'checkbox');
-    checkboxElem.checked = done;
+      const checkboxElem = document.createElement('input');
+      checkboxElem.setAttribute('type', 'checkbox');
+      // checkboxElem.checked = done;
 
-    if (done) {
-      taskItemElem.classList.add('list__item_done');
-    }
+      if (done) {
+        taskItemElem.classList.add('list__item_done');
+      }
 
-    checkboxElem.classList.add('list__item-checkbox');
-    taskItemElem.append(checkboxElem, text);
+      // checkboxElem.classList.add('list__item-checkbox');
+      taskItemElem.append(checkboxElem, text);
 
-    return taskItemElem;
-  });
+      return taskItemElem;
+    });
 
   taskElem.append(...taskItemsElems);
 };
-
 
 renderTasks(tasks);
