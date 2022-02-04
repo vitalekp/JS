@@ -1,4 +1,7 @@
-export const clearList = () => document.querySelector('.categories').innerHTML = '';
+export const clearList = () => {
+  const emptyBody = document.querySelector('.categories').innerHTML = '';
 
+  return emptyBody;
+};
 
 clearList();
