@@ -11,4 +11,4 @@ const manageClasses = () => {
 
 };
 
-manageClasses();
+// manageClasses();
