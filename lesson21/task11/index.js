@@ -1,4 +1,4 @@
-const manageClasses = () => {
+export const manageClasses = () => {
   document.querySelector('.one').classList.add('selected');
 
   document.querySelector('.two').classList.remove('selected');
