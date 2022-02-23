@@ -15,7 +15,6 @@ const spanElem = document.querySelector('.rect_span');
 
 const logTarget = (text, color) => {
   const eventsListElem = document.querySelector('.events-list');
-
   eventsListElem.innerHTML += `<span style="color: ${color}; margin-left: 8px">${text}</span>`;
 };
 
@@ -26,17 +25,15 @@ const logGreyP = logTarget.bind(null, 'P', 'grey');
 const logGreenSpan = logTarget.bind(null, 'SPAN', 'green');
 const logGreySpan = logTarget.bind(null, 'SPAN', 'grey');
 
-function attach() {
+function attachHandlers() {
   divElem.addEventListener('click', logGreenDiv);
   divElem.addEventListener('click', logGreyDiv, true);
-
   pElem.addEventListener('click', logGreenP);
   pElem.addEventListener('click', logGreyP, true);
-
   spanElem.addEventListener('click', logGreenSpan);
   spanElem.addEventListener('click', logGreySpan, true);
 }
-attach();
+attachHandlers();
 
 const clearButtonElem = document.querySelector('.clear-btn');
 clearButtonElem.addEventListener('click', () => {
@@ -54,4 +51,4 @@ removeButtonElem.addEventListener('click', () => {
 });
 
 const attachButtonElem = document.querySelector('.attach-handlers-btn');
-attachButtonElem.addEventListener('click', attach, true);
+attachButtonElem.addEventListener('click', attachHandlers);
