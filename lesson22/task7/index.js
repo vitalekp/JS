@@ -6,13 +6,9 @@
 const btnJS = document.querySelector('.btn');
 const btnHTML = document.querySelector(`.btn:last-of-type`);
 
-function handleClick() {
-  btnJS.addEventListener('click', (event) => {
-    console.log(event.target.textContent);
-  });
-  btnHTML.addEventListener('click', (event) => {
-    console.log(event.target.textContent);
-  });
+function handleClick(event) {
+  console.log(event.target.textContent);
 }
 
-handleClick();
+btnJS.addEventListener('click', handleClick);
+btnHTML.addEventListener('click', handleClick);
