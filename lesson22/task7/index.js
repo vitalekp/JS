@@ -5,9 +5,14 @@
 
 const btnJS = document.querySelector('.btn');
 const btnHTML = document.querySelector(`.btn:last-of-type`);
-btnJS.addEventListener('click', (event) => {
-  console.log(event.target.textContent);
-});
-btnHTML.addEventListener('click', (event) => {
-  console.log(event.target.textContent);
-});
+
+function handleClick() {
+  btnJS.addEventListener('click', (event) => {
+    console.log(event.target.textContent);
+  });
+  btnHTML.addEventListener('click', (event) => {
+    console.log(event.target.textContent);
+  });
+}
+
+handleClick();
