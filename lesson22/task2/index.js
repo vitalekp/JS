@@ -3,6 +3,4 @@
 // 2 при клике вывести в alert - 'done' +++
 
 const createBtnElem = document.querySelector('.create-btn');
-createBtnElem.addEventListener('click', () => {
-  alert('done');
-});
+createBtnElem.addEventListener('click', () => alert('done'));
