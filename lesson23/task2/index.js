@@ -55,8 +55,9 @@ const renderArena = () => {
 
 const onSeatSelect = event => {
   const isSeat = event.target.classList.contains('sector__seat');
-  if (isSeat) {
-    return;
+
+  if (!isSeat) {
+    return undefined;
   }
 
   const seatNumber = event.target.dataset.seatNumber;
