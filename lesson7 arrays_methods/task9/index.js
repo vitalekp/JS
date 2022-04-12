@@ -1,29 +1,26 @@
 'use strict';
 
 const withdraw = (clients, balances, client, amount) => {
-const indexClient = clients.indexOf(client);
+  const indexClient = clients.indexOf(client);
 
-  if(amount > balances[indexClient]) {
+  if (amount > balances[indexClient]) {
     return -1;
-  } 
+  }
 
-  return balances[indexClient] - amount;
-}
-
+  balances[indexClient] -= amount;
+  return balances[indexClient];
+};
 
 console.log(withdraw(['Ann', 'John', 'User'], [1400, 87, -6], 'John', 50));
-
 
 //example 1:
 
 //input
-withdraw(['Ann', 'John', 'User'], [1400, 87, -6], 'John', 50)
+withdraw(['Ann', 'John', 'User'], [1400, 87, -6], 'John', 50);
 
 //output
 //37
 //и массив balances должен быть [1400, 37, -6]
-
-
 
 //example 2:
 
