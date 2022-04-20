@@ -1,6 +1,6 @@
 'use strict';
 
-// input: Date, Date
+// input: obj, obj
 // out: string
 
 // algo
