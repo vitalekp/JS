@@ -3,14 +3,14 @@
 // input: num
 // output: object
 
-const calc = initValue => {
+export const calc = initValue => {
   let result = initValue;
   const calculator = {
     add(value) {
       result += value;
       return this;
     },
-    substract(value) {
+    subtract(value) {
       result -= value;
       return this;
     },
@@ -32,5 +32,5 @@ const calc = initValue => {
 
 // test data
 
-const test = calc(10).add(5).result();
+const test = calc(3).add(2).mult(4).subtract(5).div(3).result();
 console.log(test);
