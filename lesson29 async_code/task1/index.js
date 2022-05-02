@@ -1,5 +1,3 @@
-'use strict';
-
 // input: string, func
 // output: undefined
 
