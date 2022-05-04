@@ -19,6 +19,7 @@ const taskInputElem = document.querySelector('.task-input');
 
 const renderTasks = tasksList => {
   listElem.innerHTML = '';
+  taskInputElem.value = '';
   const tasksElems = tasksList
     .sort((a, b) => a.done - b.done)
     .map(({ text, done, id }) => {
@@ -42,35 +43,51 @@ const renderTasks = tasksList => {
 
 renderTasks(tasks);
 
-const onClickSwitch = event => {
+const taskStatusHandler = event => {
   if (!event.target.type === 'checkbox') {
     return;
   }
 
-  tasks.forEach(el => {
-    if (el.id === +event.target.dataset.id) {
-      el.done = !el.done;
-    }
+  // tasks.forEach(el => {
+  //   if (el.id === +event.target.dataset.id) {
+  //     el.done = !el.done;
+  //   }
+  // });
+
+  const taskId = event.target.dataset.id;
+  const currentTask = tasks.find(task => task.id === +taskId);
+  currentTask.done = !currentTask.done;
+
+  renderTasks(tasks);
+};
+listElem.addEventListener('click', taskStatusHandler);
+
+const taskCreateHandler = () => {
+  if (!taskInputElem.value) {
+    return;
+  }
+
+  tasks.push({
+    text: taskInputElem.value,
+    done: false,
+    id: Date.now(),
   });
 
   renderTasks(tasks);
 };
 
-const onClickAdd = event => {
-  if (!taskInputElem.value) {
-    return;
-  }
+btnElem.addEventListener('click', taskCreateHandler);
 
-  const elemArr = {
-    text: taskInputElem.value,
-    done: false,
-    id: Date.now(),
-  };
+// const taskEnterCreateHandler = event => {
+//   if (event.key === 'Enter') {
+//     tasks.push({
+//       text: taskInputElem.value,
+//       done: false,
+//       id: Date.now(),
+//     });
 
-  taskInputElem.value = '';
-  tasks.push(elemArr);
-  renderTasks(tasks);
-};
+//     renderTasks(tasks);
+//   }
+// };
 
-listElem.addEventListener('click', onClickSwitch);
-btnElem.addEventListener('click', onClickAdd);
+// taskInputElem.addEventListener('keypress', taskEnterCreateHandler);
