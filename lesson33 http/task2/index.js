@@ -1,7 +1,7 @@
 // algo
 // 1 func getTasksList => make server request for all tasks
 // and return a promise with an array of tasks
-// 2 func getTaskById =>make server request for the specified task
+// 2 func getTaskById => make server request for the specified task
 // and return a promise with the task object
 // 3 test
 
