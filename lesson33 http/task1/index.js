@@ -26,8 +26,8 @@ const renderUserData = userData => {
   userLocationElem.textContent = location ? `from ${location}` : '';
 };
 
-const onSearchUserHandler = userName => {
-  userName = showInputElem.value;
+const onSearchUserHandler = () => {
+  const userName = showInputElem.value;
   fetchUserData(userName).then(userData => renderUserData(userData));
 };
 
