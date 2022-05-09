@@ -34,6 +34,8 @@ const createListItem = ({ text, done, id }) => {
 
   const deleteBtnElem = document.createElement('button');
   deleteBtnElem.classList.add('list-item__delete-btn');
+  deleteBtnElem.setAttribute('data-id', id);
+
   listItemElem.append(checkboxElem, textElem, deleteBtnElem);
 
   return listItemElem;
