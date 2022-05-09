@@ -24,7 +24,7 @@ export const onToggleTask = e => {
     });
 };
 
-export const onListClick = e => {
+export const onListClickHandler = e => {
   if (e.target.className === 'list-item__checkbox') {
     onToggleTask(e);
   }
