@@ -23,7 +23,7 @@ loginFormElem.addEventListener('keyup', formChangeHandler);
 const mapTasks = tasks => tasks.map(({ ...rest }) => ({ ...rest }));
 
 const onSubmitHandler = e => {
-  e.preventDefault();
+  // e.preventDefault();
   const formInputElem = document.getElementsByClassName('form-input');
 
   const newUser = {
