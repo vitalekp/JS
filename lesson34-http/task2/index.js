@@ -12,7 +12,7 @@ export function createUser(userData) {
   return fetch(baseUrl, {
     method: 'POST',
     headers: {
-      'Content-type': 'application/json;charset=utf-8',
+      'Content-Type': 'application/json;charset=utf-8',
     },
     body: JSON.stringify(userData),
   });
@@ -28,7 +28,7 @@ export function updateUser(userId, userData) {
   return fetch(`${baseUrl}/${userId}`, {
     method: 'PUT',
     headers: {
-      'Content-type': 'application/json;charset=utf-8',
+      'Content-Type': 'application/json;charset=utf-8',
     },
     body: JSON.stringify(userData),
   });
