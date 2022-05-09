@@ -1,37 +1,37 @@
-const userUrl = 'https://6278d8d3d00bded55adfaff0.mockapi.io/api/v1/users';
+const baseUrl = 'https://6278d8d3d00bded55adfaff0.mockapi.io/api/v1/users';
 
 export function getUsersList() {
-  return fetch(userUrl).then(response => response.json());
+  return fetch(baseUrl).then(response => response.json());
 }
 
 export function getUserById(userId) {
-  return fetch(`${userUrl}/${userId}`).then(response => response.json());
+  return fetch(`${baseUrl}/${userId}`).then(response => response.json());
 }
 
 export function createUser(userData) {
-  return fetch(userUrl, {
+  return fetch(baseUrl, {
     method: 'POST',
     headers: {
       'Content-type': 'application/json;charset=utf-8',
     },
     body: JSON.stringify(userData),
-  }).then(response => response.json());
+  });
 }
 
 export function deleteUser(userId) {
-  return fetch(`${userUrl}/${userId}`, {
+  return fetch(`${baseUrl}/${userId}`, {
     method: 'DELETE',
-  }).then(response => response.json());
+  });
 }
 
 export function updateUser(userId, userData) {
-  return fetch(`${userUrl}/${userId}`, {
+  return fetch(`${baseUrl}/${userId}`, {
     method: 'PUT',
     headers: {
       'Content-type': 'application/json;charset=utf-8',
     },
     body: JSON.stringify(userData),
-  }).then(response => response.json());
+  });
 }
 
 // examples
