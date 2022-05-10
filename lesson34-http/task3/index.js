@@ -24,9 +24,6 @@ const onSubmitHandler = e => {
   e.preventDefault();
   const formInputElem = document.getElementsByClassName('form-input');
 
-  // const userData = Object.fromEntries(new FormData(formInputElem));
-  // console.log(userData);
-
   const newUser = {
     email: formInputElem.email.value,
     name: formInputElem.name.value,
@@ -41,8 +38,8 @@ const onSubmitHandler = e => {
     body: JSON.stringify(newUser),
   })
     .then(response => response.json())
-    .then(tasks => {
-      alert(JSON.stringify(tasks));
+    .then(response => {
+      alert(JSON.stringify(response));
 
       loginFormElem.reset();
 
