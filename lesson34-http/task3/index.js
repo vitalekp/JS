@@ -13,15 +13,12 @@ const formValidityHandler = () => {
   const isValidForm = loginFormElem.reportValidity();
   if (isValidForm) {
     submitBtn.removeAttribute('disabled');
-    // submitBtn.setAttribute('disabled', 'false');
   } else {
     submitBtn.setAttribute('disabled', true);
   }
 };
 
 loginFormElem.addEventListener('keyup', formValidityHandler);
-
-const mapTasks = tasks => tasks.map(({ ...rest }) => ({ ...rest }));
 
 const onSubmitHandler = e => {
   e.preventDefault();
@@ -46,7 +43,6 @@ const onSubmitHandler = e => {
 
       loginFormElem.reset();
 
-      // submitBtn.removeAttribute('enabled');
       submitBtn.setAttribute('disabled', true);
     });
 };
