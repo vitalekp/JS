@@ -43,7 +43,7 @@ const onSubmitHandler = e => {
 
       loginFormElem.reset();
 
-      // submitBtn.setAttribute('disabled', true);
+      submitBtn.setAttribute('disabled', true);
     });
 };
 
