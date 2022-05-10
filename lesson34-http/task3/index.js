@@ -9,22 +9,23 @@ const baseUrl = 'https://6278d8d3d00bded55adfaff0.mockapi.io/api/v1/users/';
 const loginFormElem = document.querySelector('.login-form');
 const submitBtn = document.querySelector('.submit-button');
 
-const formChangeHandler = () => {
+const formValidityHandler = () => {
   if (loginFormElem.reportValidity()) {
-    submitBtn.disabled = false;
-    return;
+    submitBtn.removeAttribute('disabled');
+    submitBtn.setAttribute('enabled', '');
   }
-
-  submitBtn.disabled = true;
 };
 
-loginFormElem.addEventListener('keyup', formChangeHandler);
+loginFormElem.addEventListener('keyup', formValidityHandler);
 
 const mapTasks = tasks => tasks.map(({ ...rest }) => ({ ...rest }));
 
 const onSubmitHandler = e => {
   e.preventDefault();
   const formInputElem = document.getElementsByClassName('form-input');
+
+  const userData = Object.fromEntries(new FormData(formInputElem));
+  console.log(userData);
 
   const newUser = {
     email: formInputElem.email.value,
@@ -43,11 +44,10 @@ const onSubmitHandler = e => {
     .then(tasks => {
       alert(JSON.stringify(tasks));
 
-      // formInputElem[0].value = '';
-      // formInputElem[1].value = '';
-      // formInputElem[2].value = '';
       loginFormElem.reset();
-      submitBtn.disabled = true;
+
+      submitBtn.removeAttribute('enabled');
+      submitBtn.setAttribute('disabled', '');
     });
 };
 
