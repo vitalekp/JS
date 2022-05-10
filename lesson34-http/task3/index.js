@@ -24,8 +24,8 @@ const onSubmitHandler = e => {
   e.preventDefault();
   const formInputElem = document.getElementsByClassName('form-input');
 
-  const userData = Object.fromEntries(new FormData(formInputElem));
-  console.log(userData);
+  // const userData = Object.fromEntries(new FormData(formInputElem));
+  // console.log(userData);
 
   const newUser = {
     email: formInputElem.email.value,
