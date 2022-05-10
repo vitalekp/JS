@@ -43,10 +43,10 @@ const onSubmitHandler = e => {
     .then(tasks => {
       alert(JSON.stringify(tasks));
 
-      formInputElem[0].value = '';
-      formInputElem[1].value = '';
-      formInputElem[2].value = '';
-
+      // formInputElem[0].value = '';
+      // formInputElem[1].value = '';
+      // formInputElem[2].value = '';
+      loginFormElem.reset();
       submitBtn.disabled = true;
     });
 };
