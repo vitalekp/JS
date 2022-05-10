@@ -10,9 +10,12 @@ const loginFormElem = document.querySelector('.login-form');
 const submitBtn = document.querySelector('.submit-button');
 
 const formValidityHandler = () => {
-  if (loginFormElem.reportValidity()) {
+  const isValidForm = loginFormElem.reportValidity();
+  if (isValidForm) {
     submitBtn.removeAttribute('disabled');
-    submitBtn.setAttribute('enabled', '');
+    // submitBtn.setAttribute('disabled', 'false');
+  } else {
+    submitBtn.setAttribute('disabled', true);
   }
 };
 
@@ -43,8 +46,8 @@ const onSubmitHandler = e => {
 
       loginFormElem.reset();
 
-      submitBtn.removeAttribute('enabled');
-      submitBtn.setAttribute('disabled', '');
+      // submitBtn.removeAttribute('enabled');
+      submitBtn.setAttribute('disabled', true);
     });
 };
 
