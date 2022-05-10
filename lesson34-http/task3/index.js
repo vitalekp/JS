@@ -1,7 +1,7 @@
 // algo
 // 1 зробити кнопку Register 'able', якщо всі поля заповнені reportValidity() +++
-// 2 після нажимання на кнопку відправити данні на сервер і очистити поля вводу +
-// 3 вивести відповідь від сервера в alert у вигляді обєкта
+// 2 після нажимання на кнопку відправити данні на сервер і очистити поля вводу +++
+// 3 вивести відповідь від сервера в alert у вигляді обєкта +++
 // 4 test and refactoring
 
 const baseUrl = 'https://6278d8d3d00bded55adfaff0.mockapi.io/api/v1/users/';
@@ -11,12 +11,11 @@ const submitBtn = document.querySelector('.submit-button');
 
 const formChangeHandler = () => {
   if (loginFormElem.reportValidity()) {
-    submitBtn.disabled = 0;
-    submitBtn.enable = 1;
+    submitBtn.disabled = false;
     return;
   }
 
-  submitBtn.disabled = 1;
+  submitBtn.disabled = true;
 };
 
 loginFormElem.addEventListener('keyup', formChangeHandler);
@@ -33,9 +32,6 @@ const onSubmitHandler = e => {
     password: formInputElem.password.value,
   };
 
-  // document.getElementsByClassName('login-form').reset();
-  console.log(newUser);
-
   return fetch(baseUrl, {
     method: 'POST',
     headers: {
@@ -46,9 +42,12 @@ const onSubmitHandler = e => {
     .then(response => response.json())
     .then(tasks => {
       alert(JSON.stringify(tasks));
+
       formInputElem[0].value = '';
       formInputElem[1].value = '';
       formInputElem[2].value = '';
+
+      submitBtn.disabled = true;
     });
 };
 
