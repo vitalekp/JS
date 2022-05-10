@@ -18,7 +18,7 @@ const formValidityHandler = () => {
   }
 };
 
-loginFormElem.addEventListener('keyup', formValidityHandler);
+loginFormElem.addEventListener('input', formValidityHandler);
 
 const onSubmitHandler = e => {
   e.preventDefault();
@@ -43,7 +43,7 @@ const onSubmitHandler = e => {
 
       loginFormElem.reset();
 
-      submitBtn.setAttribute('disabled', true);
+      // submitBtn.setAttribute('disabled', true);
     });
 };
 
