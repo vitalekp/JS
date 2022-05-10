@@ -12,6 +12,7 @@ const submitBtn = document.querySelector('.submit-button');
 const formChangeHandler = () => {
   if (loginFormElem.reportValidity()) {
     submitBtn.disabled = 0;
+    submitBtn.enable = 1;
     return;
   }
 
@@ -23,7 +24,7 @@ loginFormElem.addEventListener('keyup', formChangeHandler);
 const mapTasks = tasks => tasks.map(({ ...rest }) => ({ ...rest }));
 
 const onSubmitHandler = e => {
-  // e.preventDefault();
+  e.preventDefault();
   const formInputElem = document.getElementsByClassName('form-input');
 
   const newUser = {
@@ -31,6 +32,9 @@ const onSubmitHandler = e => {
     name: formInputElem.name.value,
     password: formInputElem.password.value,
   };
+
+  // document.getElementsByClassName('login-form').reset();
+  console.log(newUser);
 
   return fetch(baseUrl, {
     method: 'POST',
@@ -40,13 +44,12 @@ const onSubmitHandler = e => {
     body: JSON.stringify(newUser),
   })
     .then(response => response.json())
-    .then(tasks => alert(JSON.stringify(tasks)));
+    .then(tasks => {
+      alert(JSON.stringify(tasks));
+      formInputElem[0].value = '';
+      formInputElem[1].value = '';
+      formInputElem[2].value = '';
+    });
 };
 
 submitBtn.addEventListener('click', onSubmitHandler);
-
-// export const getTasksList = () => {
-//   return fetch(`${baseUrl}`)
-//     .then(response => response.json())
-//     .then(tasks => mapTasks(tasks));
-// };
