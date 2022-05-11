@@ -10,12 +10,4 @@ export const parseUser = jsonStr => {
   }
 };
 
-parseUser('{"name":"Tom"');
-
-// try {
-//   const user = JSON.parse('{"name":"Tom"}');
-//   console.log('User data: ', user);
-//   userParsingResult = 'success';
-// } catch (e) {
-//   userParsingResult = 'error';
-// }
+// parseUser('{"name":"Tom"}');
