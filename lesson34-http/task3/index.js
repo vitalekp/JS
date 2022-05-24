@@ -4,7 +4,7 @@
 // 3 вивести відповідь від сервера в alert у вигляді обєкта +++
 // 4 test and refactoring
 
-const baseUrl = 'https://6278d8d3d00bded55adfaff0.mockapi.io/api/v1/users/';
+const baseUrl = 'https://6281ec929fac04c6540b9efb.mockapi.io/api/v1/tasks/';
 
 const loginFormElem = document.querySelector('.login-form');
 const submitBtn = document.querySelector('.submit-button');
