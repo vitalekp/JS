@@ -7,14 +7,14 @@
 const baseUrl = 'https://6281ec929fac04c6540b9efb.mockapi.io/api/v1/tasks/';
 
 const loginFormElem = document.querySelector('.login-form');
-const submitBtn = document.querySelector('.submit-button');
+const submitBtnElem = document.querySelector('.submit-button');
 
 const formValidityHandler = () => {
   const isValidForm = loginFormElem.reportValidity();
   if (isValidForm) {
-    submitBtn.removeAttribute('disabled');
+    submitBtnElem.removeAttribute('disabled');
   } else {
-    submitBtn.setAttribute('disabled', true);
+    submitBtnElem.setAttribute('disabled', true);
   }
 };
 
@@ -22,20 +22,19 @@ loginFormElem.addEventListener('input', formValidityHandler);
 
 const onSubmitHandler = e => {
   e.preventDefault();
-  const formInputElem = document.getElementsByClassName('form-input');
 
-  const newUser = {
-    email: formInputElem.email.value,
-    name: formInputElem.name.value,
-    password: formInputElem.password.value,
-  };
+  const userData = Object.fromEntries(new FormData(loginFormElem));
+
+  // the same with reduce
+  // const formData = [...new FormData(formElem)]
+  //     .reduce((acc, [prop, value]) => ({ ...acc, [prop]: value }), {});
 
   return fetch(baseUrl, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8',
     },
-    body: JSON.stringify(newUser),
+    body: JSON.stringify(userData),
   })
     .then(response => response.json())
     .then(response => {
@@ -43,8 +42,8 @@ const onSubmitHandler = e => {
 
       loginFormElem.reset();
 
-      submitBtn.setAttribute('disabled', true);
+      submitBtnElem.setAttribute('disabled', true);
     });
 };
 
-submitBtn.addEventListener('click', onSubmitHandler);
+submitBtnElem.addEventListener('click', onSubmitHandler);
