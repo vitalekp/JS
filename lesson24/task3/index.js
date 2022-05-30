@@ -25,7 +25,7 @@ export const getDiff = (startDate, endDate) => {
   return `${dayDiff}d ${hourDiff}h ${minuteDiff}m ${secondDiff}s`;
 };
 
-// test data
+// test DATA
 
 const test = getDiff(new Date(), new Date(2000, 10));
 const test2 = getDiff(new Date(), new Date(2021, 4, 19));
